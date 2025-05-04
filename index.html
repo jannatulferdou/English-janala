@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala</title>
+
+<!-- daisy -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- css -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- sweet alert -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    .hind-siliguri-font {
+  font-family: "Hind Siliguri", sans-serif;
+    }
+    .grid {
+  display: grid !important;
+    }
+  .active {
+ background-color: #422AD5;
+           
+ color: white;
+ }
+
+
+    
+
+</style>
+
+
+</head>
+<body>
+    <header>
+       <nav>
+        <div class="navbar bg-base-100 shadow-sm hidden"  id="navbar">
+            <div class="flex-1">
+             <div class="flex">
+                <h1 class="text-xl mt-1">English</h1>
+             <img src="assets/logo.png" alt="">
+             <h1 class="text-xl mt-1 hind-siliguri-font">জানালা</h1>
+             </div>
+            </div>
+            <div class="flex-none">
+              <div class="dropdown dropdown-end gap-5">
+                <div class="gap-5">
+                 <button class="btn btn-outline btn-primary ml-3 text-sm" id="faq-btn"><img src="https://img.icons8.com/?size=100&id=2908&format=png&color=7950F2" alt="" class="w-5 h-5">FAQ</button>
+                 <button class="btn btn-outline btn-primary ml-3 text-sm" id="learn-btn"><img src="https://img.icons8.com/?size=100&id=38390&format=png&color=7950F2" alt="" class="w-5">Learn</button>
+                 <button class="btn btn-outline btn-primary ml-3 text-sm logout-btn"><img src="https://img.icons8.com/?size=100&id=BdksXmxLaK8r&format=png&color=7950F2" alt="" class="w-5">Logout</button>
+                </div>
+               
+              
+            </div>
+          </div>
+       </nav>
+
+       <!-- log in section -->
+       <div class="mt-40 min-h-screen flex" id="login-banner">
+        <div class="ml-20">
+          <div class="">
+            <h1 class="text-4xl font-bold"><span class="text-sky-500">English</span> is Easy!!</h1>
+            <p class="py-6 w-100 hind-siliguri-font">
+                আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
+            </p>
+          </div>
+          <div class="">
+            <div class="gap-5">
+              <fieldset class="fieldset">
+                
+                <input type="text" class="input mb-5" placeholder="Enter Your Name" id="name"/>
+                
+                <input type="password" class="input mb-5" placeholder="Password"  id="password" />
+               
+                <button class="btn btn-primary w-40" id="login-btn" onclick="showAlert()">Get Started</button>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div>
+            <img src="assets/hero-student.png" alt="" class="w-115 ml-55">
+        </div>
+      </div>
+    </header>
+    <main>
+        <!-- vocab -->
+         <section  class="items-center gap-4 p-5 w-full mx-auto justify-center justify-items-center hidden" id="vocab-section">
+
+          <h2 class="text-4xl font-bold text-center mb-10"><span class="text-sky-500">Let's</span> Learn Vocabularies</h2>
+
+          
+          
+
+          <div class="justify-items-center flex gap-5 mb-5 lesson-container" id="vocabularies-container">
+            
+          </div>
+          <section id="spiner" class="text-center py-10 hidden">
+            <span class="loading loading-dots loading-lg"></span>
+          </section>
+
+         
+
+          <div class="bg-base-200 w-full pt-16 justify-items-center hind-siliguri-font mb-10" id="select-container">
+            <p class="text-sm text-gray-500 mb-5">
+              আপনি এখনো কোন  Lesson Select করেন নি 
+            </p>
+            <h1 class="text-2xl font-bold pb-16">একটি Lesson Select করুন।</h1>
+          </div>
+
+          <div id="word-container" class="grid grid-cols-3 gap-5 mx-auto w-full h-full">
+
+
+          </div>
+
+         
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <div id="modal_body">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+       
+        <button class="btn btn-primary">Complete Learning</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<!-- lesson-4 & 7 -->
+<div class="bg-base-200 w-full pt-16 justify-items-center hind-siliguri-font mb-10 hidden" id="next-container">
+
+  <img src="https://img.icons8.com/?size=100&id=LNmmctG091Sx&format=png&color=000000" alt="">
+  <p class="text-sm text-gray-500 mb-5">
+    এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+  </p>
+  <h1 class="text-2xl font-bold pb-16">নেক্সট Lesson এ যান</h1>
+</div>
+
+
+
+</section>
+
+
+
+        
+         <!-- faq -->
+
+
+         <section class="mt-25 hidden" id="faq-section">
+
+          <h2 class="text-4xl font-bold text-center mb-10 "><span class="text-sky-500">Frequently</span> Asked Questions</h2>
+
+          <div class="collapse bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-1" checked="checked" />
+            <div class="collapse-title font-semibold">What is the difference between var, let, and const?</div>
+            <div class="collapse-content text-sm">The difference between var, let, and const : <br> Var is function-scoped and can be re-declared and updated, let is block-scoped and can be updated but not re-declared, and const is block-scoped and cannot be updated or re-declared. </div>
+          </div>
+          <div class="collapse bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title font-semibold">What is the difference between map(), forEach(), and filter() ?</div>
+            <div class="collapse-content text-sm"> The difference between map(), forEach(), and filter() : <br> map() returns a new array with the results of the function applied to each element, forEach() will not return anything, filter() method will return an array of matching elements else will return an empty array if no matching happens</div>
+          </div>
+          <div class="collapse bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title font-semibold"> What are arrow functions and how they are different from regular functions?</div>
+            <div class="collapse-content text-sm">
+              Arrow functions, introduced in ES6, offer a concise syntax for writing functions, particularly function expressions, while regular functions are the traditional way to define functions in JavaScript.</div>
+          </div>
+          <div class="collapse bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title font-semibold">How do JavaScript Promises work?</div>
+            <div class="collapse-content text-sm">A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.</div>
+          </div>
+          <div class="collapse bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title font-semibold"> How does closure work in JavaScript?</div>
+            <div class="collapse-content text-sm">A closure is the combination of a function bundled together (enclosed) with references to its surrounding state.</div>
+          </div>
+
+         </section>
+    </main>
+
+    
+    <footer class=" bg-base-200 text-base-content border-base-300 border-t pt-15 pl-15 mt-30 ">
+      
+      <div class="flex">
+        <h1 class="text-xl mt-1">English</h1>
+     <img src="assets/logo.png" alt="">
+     <h1 class="text-xl mt-1 hind-siliguri-font">জানালা</h1>
+     </div>
+     <h2 class="hind-siliguri-font text-xl font-semibold mt-5 mb-2">ইংরেজি শিখুন সহজে</h2>
+     <p class="text-sm">Providing ED-Tech Applications since 2025</p>
+      <nav class="md:place-self-center md:justify-self-end pr-20">
+        <h2 class="uppercase text-gray-600 mb-3">Follow us</h2>
+        <div class="grid grid-flow-col gap-4 pb-20">
+          <a href="https://www.facebook.com/"><img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="" class="w-7 h-7"></a>
+          <a href="https://www.youtube.com/"><img src="https://img.icons8.com/?size=100&id=37326&format=png&color=000000" alt="" class="w-8 h-8"></a>
+          <a href="https://www.instagram.com/"><img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="" class="w-7 h-7"></a>
+          <a href="https://github.com/"><img src="https://img.icons8.com/?size=100&id=106567&format=png&color=000000" alt="" class="w-7 h-7"></a>
+        </div>
+      </nav>
+    </footer>
+
+
+    
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
